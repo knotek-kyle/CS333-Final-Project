@@ -25,7 +25,7 @@ jobs:
         run: |
           pip install ruff
           ruff --format=github --target-version=py37 .
-          
+      - name: Deploy Main Program    
         run: |
           python3 main.py
         continue-on-error: true
