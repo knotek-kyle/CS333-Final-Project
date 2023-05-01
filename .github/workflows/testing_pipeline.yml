@@ -16,7 +16,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-      - name: Test with pytest
+      - name: Test with coverage.py
         run: |
           pip install coverage
           coverage run test.py
