@@ -1,4 +1,3 @@
-# 7x6 board
 from checkWins import checkWins
 from checkWins import inputActions
 from printBoard import *
