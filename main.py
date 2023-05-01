@@ -4,6 +4,11 @@ from checkWins import inputActions
 from printBoard import *
 import sys
 
+#Kyle Knotek - CS 333 Final Project
+
+#Original connect 4 project from user "mrcosciug" Link: https://github.com/k2rbpz/codecademy-completed/blob/33b7a72dcbbd95020eafdfc1b950de9bb552c4ff/connect_four.py
+#All unit and integration test were written by me. Connect 4 game is heavily edited to account for testing, automated gameplay test script, and more modularization.
+
 Lines = []
 if (len(sys.argv) == 2):
         inputFile = open(sys.argv[1], 'r')
