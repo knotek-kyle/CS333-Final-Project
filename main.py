@@ -2,15 +2,30 @@
 from checkWins import checkWins
 from checkWins import inputActions
 from printBoard import *
+import sys
 
+Lines = []
+if (len(sys.argv) == 2):
+        inputFile = open(sys.argv[1], 'r')
+        #Lines = inputFile.readlines()
+        Lines = [line[:-1] for line in inputFile]
+        print("Test script input: ", Lines)
+        #print(Lines)
+        inputFile.close()
+        
 # Initial board print
 print('\nConnect Four \n')
 print_board()
 game_over = False
 round_count = 0
-while inputActions.valid == False:
-    player = input('Choose your piece - O or X: ').upper()
-    player_1,player_2 = inputActions.player_select(player)
+if (len(sys.argv) == 2):
+    while inputActions.valid == False:
+        player = Lines[0]
+        player_1,player_2 = inputActions.player_select(player)
+else:
+    while inputActions.valid == False:
+        player = input('Choose your piece - O or X: ').upper()
+        player_1,player_2 = inputActions.player_select(player)
 
 # gameplay
 while game_over == False:
@@ -29,12 +44,18 @@ while game_over == False:
         
     # get column from player
     while inputActions.cValid == False:
-        try:
-            inputColumn = int(input('Choose a column from 1 to 7: '))
-        except:
-            print("Not a valid column.")
+        if (len(sys.argv) == 2):
+            try:
+                inputColumn = int(Lines[round_count])
+            except:
+                print("Not a valid column.") 
+        else:
+            try:
+                inputColumn = int(input('Choose a column from 1 to 7: '))
+            except:
+                print("Not a valid column.")
+            
         column = inputActions.column_select(inputColumn)
-        print(inputColumn)
         
     inputActions.drop_piece(piece, column)
     print('Piece dropped on column {col}, row {row}.'.format(col = column, row = find_row(piece, column)+1))
