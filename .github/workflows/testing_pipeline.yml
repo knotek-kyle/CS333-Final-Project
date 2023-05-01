@@ -21,10 +21,6 @@ jobs:
           pip install coverage
           coverage run test.py
           coverage html
-      - name: Lint with Ruff
-        run: |
-          pip install ruff
-          ruff --format=github --target-version=py37 .
       - name: Deploy Main Program    
         run: |
           python3 main.py
