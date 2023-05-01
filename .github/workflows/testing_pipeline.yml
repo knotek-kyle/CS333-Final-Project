@@ -23,5 +23,5 @@ jobs:
           coverage html
       - name: Deploy Main Program    
         run: |
-          python3 main.py
+          python3 main.py testScript.txt
         continue-on-error: true
