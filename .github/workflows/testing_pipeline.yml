@@ -21,6 +21,9 @@ jobs:
           pip install coverage
           coverage run test.py
           coverage html
+      - name: Testing Coverage Report
+        run: |
+          coverage report
       - name: Deploy Main Program    
         run: |
           python3 main.py testScript.txt
