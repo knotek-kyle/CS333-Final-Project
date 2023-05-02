@@ -15,7 +15,7 @@ class TestGameInputActions(unittest.TestCase):
         
     def test_playerSelectValid(self):
         testObj = inputActions
-        testObj.player_select('X')
+        testObj.player_select('B')
         self.assertEqual(testObj.valid, True)
         
     def test_columnSelectFull(self):
