@@ -18,7 +18,7 @@ if (len(sys.argv) == 2):
         inputFile.close()
         
 # Initial board print
-print('\nConnect Four \n')
+print('\nConnect Four - Kyle Knotek\n')
 print_board()
 game_over = False
 round_count = 0
