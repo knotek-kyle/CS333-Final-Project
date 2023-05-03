@@ -26,5 +26,5 @@ jobs:
           coverage report
       - name: Deploy Main Program    
         run: |
-          python3 src/main.py testScript.txt
+          python3 src/main.py src/testScript.txt
         continue-on-error: true
