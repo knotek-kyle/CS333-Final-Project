@@ -30,4 +30,5 @@ jobs:
       - name: Create Docker Image
         run: |
           docker build -t connect4_image .
-        continue-on-error: true
+
+
