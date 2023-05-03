@@ -24,7 +24,11 @@ jobs:
       - name: Testing Coverage Report
         run: |
           coverage report
-      - name: Deploy Main Program    
+      - name: Run Main Program Test Script
         run: |
           python3 src/main.py src/testScript.txt
+      - name: Create Docker Image
+        run: |
+          docker build -t connect4_image .
+          docker run -it connect4_image /bin/bash
         continue-on-error: true
