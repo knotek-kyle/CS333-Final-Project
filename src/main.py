@@ -10,7 +10,7 @@ import sys
 
 #the python files are containerized with a dockerfile and is automatically built and deployed to DockerHub
 #to run the docker image, use docker 'docker pull kknotek387/connect4_image:main' to pull the image from DockerHub
-#when building the image into a container, use 'docker run kknotek387/connect4_image:main', then you can play connect 4 in the docker container terminal.
+#when building the image into a container, use 'docker run -it kknotek387/connect4_image:main', then you can play connect 4 in the docker container terminal.
 
 Lines = []
 if (len(sys.argv) == 2):
