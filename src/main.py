@@ -8,6 +8,10 @@ import sys
 #Original connect 4 project from user "mrcosciug" Link: https://github.com/k2rbpz/codecademy-completed/blob/33b7a72dcbbd95020eafdfc1b950de9bb552c4ff/connect_four.py
 #All unit and integration test were written by me. Connect 4 game is heavily edited to account for testing, automated gameplay test script, and more modularization.
 
+#the python files are containerized with a dockerfile and is automatically built and deployed to DockerHub
+#to run the docker image, use docker 'docker pull kknotek387/connect4_image:main' to pull the image from DockerHub
+#when building the image into a container, use 'docker run kknotek387/connect4_image:main', then you can play connect 4 in the docker container terminal.
+
 Lines = []
 if (len(sys.argv) == 2):
         inputFile = open(sys.argv[1], 'r')
@@ -18,7 +22,7 @@ if (len(sys.argv) == 2):
         inputFile.close()
         
 # Initial board print
-print('\nConnect Four - Kyle Knotek\n')
+print('\nConnect Four - Kyle Knotek - Docker Container Version\n')
 print_board()
 game_over = False
 round_count = 0
